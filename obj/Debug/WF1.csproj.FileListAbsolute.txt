@@ -1,0 +1,10 @@
+C:\Users\017586631\source\repos\WF1\bin\Debug\WF1.exe.config
+C:\Users\017586631\source\repos\WF1\bin\Debug\WF1.exe
+C:\Users\017586631\source\repos\WF1\bin\Debug\WF1.pdb
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.csproj.AssemblyReference.cache
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.Form1.resources
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.Properties.Resources.resources
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.csproj.GenerateResource.cache
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.csproj.CoreCompileInputs.cache
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.exe
+C:\Users\017586631\source\repos\WF1\obj\Debug\WF1.pdb
