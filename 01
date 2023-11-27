@@ -1,0 +1,67 @@
+@Injectable({
+  providedIn: 'root',
+})
+export class CustomEventTrackingService {
+  private defaultParameters: any = null;
+
+  constructor(private trackService: EventTrackingService) {
+    // Inicializa os parâmetros padrão apenas uma vez no construtor do serviço
+    this.initDefaultParameters();
+  }
+
+  private initDefaultParameters(): void {
+    this.defaultParameters = {
+      analytics: {
+        parameters: {
+          business: 'canais-fisicos',
+          environment: 'logado',
+          business_channel: '360i',
+        },
+      },
+    };
+  }
+
+  private getUserProperties(): any {
+    const accountType = this.fetchAccountType();
+    const operatorType = this.fetchOperatorType();
+
+    return this.createUserProperties(accountType, operatorType);
+  }
+
+  private createUserProperties(accountType: string, operatorType: string): any {
+    return {
+      analytics: {
+        user: {
+          account_type: accountType,
+          operator_type: operatorType,
+        },
+      },
+    };
+  }
+
+  private fetchAccountType(): string {
+    // Lógica para obter o tipo de conta do usuário
+    return 'canal-origem';
+  }
+
+  private fetchOperatorType(): string {
+    // Lógica para obter o tipo de operador do usuário
+    return 'grupo-operador';
+  }
+
+  trackScreenView(customPath: string): void {
+    const event: ITrack = {
+      analytics: {
+        event_name: 'screen_view',
+        parameters: {
+          custom_path: customPath,
+          implementation_team: 'ph3:canais-recuperacao',
+          ...this.defaultParameters,
+          ...this.getUserProperties(),
+        },
+      },
+    };
+
+    this.trackService.send(event);
+  }
+}
