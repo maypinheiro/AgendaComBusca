@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+import { CustomEventTrackingService } from './caminho/do/seu/servico'; // Ajuste o caminho conforme necessário
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  constructor(private customEventTrackingService: CustomEventTrackingService) {}
+
+  ngOnInit(): void {
+    // Executa as configurações iniciais no início do aplicativo
+    this.customEventTrackingService.initDefaultSettings();
+  }
+}
+-----------------
+componet.ts
+
+ constructor(private customEventTrackingService: CustomEventTrackingService) { }
+
+  ngOnInit(): void {
+    // Aqui você pode chamar o método trackScreenView com o caminho personalizado
+    this.customEventTrackingService.trackScreenView('/lista-contratos');
+  }
+}
